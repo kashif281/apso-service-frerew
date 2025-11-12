@@ -1,0 +1,98 @@
+{
+  "entities": [
+    {
+      "name": "Patient",
+      "created_at": false,
+      "updated_at": false,
+      "fields": [
+        {
+          "name": "name",
+          "type": "varchar",
+          "nullable": false
+        },
+        {
+          "name": "dob",
+          "type": "date",
+          "nullable": false
+        },
+        {
+          "name": "gender",
+          "type": "varchar",
+          "nullable": false
+        },
+        {
+          "name": "phone_number",
+          "type": "varchar",
+          "nullable": true
+        },
+        {
+          "name": "email",
+          "type": "varchar",
+          "nullable": true
+        },
+        {
+          "name": "address",
+          "type": "text",
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "name": "Appointment",
+      "created_at": false,
+      "updated_at": false,
+      "fields": [
+        {
+          "name": "date",
+          "type": "date",
+          "nullable": false
+        },
+        {
+          "name": "time",
+          "type": "time",
+          "nullable": false
+        },
+        {
+          "name": "status",
+          "type": "varchar",
+          "nullable": false
+        },
+        {
+          "name": "notes",
+          "type": "text",
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "name": "Activity",
+      "created_at": false,
+      "updated_at": false,
+      "fields": [
+        {
+          "name": "name",
+          "type": "varchar",
+          "nullable": false
+        },
+        {
+          "name": "description",
+          "type": "text",
+          "nullable": true
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "Patient",
+      "to": "Appointment",
+      "type": "OneToMany"
+    },
+    {
+      "from": "Patient",
+      "to": "Activity",
+      "type": "OneToMany"
+    }
+  ],
+  "_removedEntities": []
+}
